@@ -1,0 +1,577 @@
+<!-- *******************************************************************************************
+  *
+  *  PAGE FRAMEWORK 
+  *
+  *  code supplied by Ant Pearson (2014) for student use in the LMU Interactive Media Design
+  *  module.  You are free to use this code as a starting point for your interactive builds.
+  *  The example has 5 pages: an intro, menu, and 3 content pages but you should modify to 
+  *  suit your own interactive designs.
+  *
+  *********************************************************************************************** -->
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Rocket Force</title>
+
+		<!-- makes browsers render all elements more consistently. Similar to a CSS reset file -->
+		<link rel="stylesheet" href="css/normalize.css">
+
+		<!-- the main style sheet you should edit -->  
+		<link rel="stylesheet" href="css/style.css"> 
+
+		<!-- link to PT-Sans font from google fonts --> 
+		<link rel="stylesheet" href="https://use.typekit.net/ymv5rfy.css">
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+		<link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
+
+		<!-- link to local version of jQuery --> 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/jquery.gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/utils/Draggable.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+
+
+
+		<!-- Link to your own javascript file  --> 
+		<script src="js/script.js"></script>
+		<script src="js/next.js"></script>
+		<script src="js/draganddrop.js"></script>
+		<script src="js/pushSlider.js"></script>
+		<script src="js/input-resultantForce.js"></script>	
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+	</head>
+	<body>
+		<!-- main page wrap for the interactive -->
+		<div id="main-container"> 
+
+			<!-- container for all the individual pages -->
+			<div class="pages">
+				<!-- ========================= INTRO =========================== -->
+
+			<div class="page-intro current">
+			
+			<img class="logo" src="images/launch-page/logo.png" alt="logo">
+
+				<div class="spaceman">
+
+					<img class="man-backpack" src="images/launch-page/spacemanBuild/backpack.png" alt="backpack">
+
+					<img class="man-body" src="images/launch-page/spacemanBuild/body.png" alt="spaceman body">
+
+					<img class="spacemanArm man-arm" src="images/launch-page/spacemanBuild/spacemanArm.png"alt="spaceman Arm">
+
+					<img class="man-head" src="images/launch-page/spacemanBuild/head.png" alt="spaceman head">
+
+				</div>
+
+
+			<img class="shootingStar" src="images/launch-page/shootingStar.png">
+
+			<img class="star" src="images/launch-page/star.png">
+
+			<img class="sun" src="images/launch-page/sun.png">
+
+			<img class="pinkmoon" src="images/launch-page/pinkMoon.png">
+
+
+				<div class="earth">
+					<img class="shine2 atmosphere" src="images/launch-page/shine3.png">
+
+					<img class="shine1 atmosphere" src="images/launch-page/shine2.png">
+
+					<img class="shine atmosphere"src="images/launch-page/shine.png">
+
+					<img class="earthMain" src="images/launch-page/earth.png">
+				</div>
+
+
+			<img class="rocket" src="images/launch-page/rocket.png">
+			
+			<button class="launch visable">
+				<div class="launchButton">
+					<div class="launchButtonColour pointer">
+						<h1>Launch</h1>
+					</div>
+				</div>
+			</button>
+
+
+
+
+				</div> <!-- intro page -->
+
+				<!-- ========================= MENU =========================== -->
+
+				<div class="page-menu">	
+					<div class="nameForm">	
+						<h1 class="enterh1" >Enter Name</h1>
+						<form name="enterName">
+							<input type="text" id="txt" name="name" required>
+							<div class="okBTN" onclick='check(); return false'>
+								<img class="ok" id="ok-btn" src="images/ui/ok.svg" alt="Mountains">
+							</div>
+						</form>
+					</div>
+
+
+					<div class="blur">
+						<img class="logo-menu" src="images/launch-page/logo.png" alt="logo">
+							
+					<div class="welcomeName">
+						<h1>Welcome<br> <span id="name"></span></h1>
+					</div>
+
+
+						<div class="takeoff menu-circle">
+
+							<div class="takeoffButton pointer">
+									<div class="takeoffColour">
+										<h1>Take Off!</h1>
+									</div>
+								</div>
+
+							<div class="rocket-menu">
+
+								<img class="rocketbody" src="images/menu/rocket2.svg" alt="spaceman" id="rocketbody">
+
+							<!--	<img class="fire-left" src="images/menu/fire-left.svg" alt="spaceman">
+
+								<img class="fire-right" src="images/menu/fire-right.svg" alt="spaceman">-->
+
+							</div>
+							
+						</div>
+
+						<div class="badges menu-circle">
+
+							<img class="mainLock" src="images/lock/lock-main.svg" alt="lock body">
+							<img class="Lockhinge" src="images/lock/lock-hinge.svg" alt="lock hinge">
+									
+
+							<div class="badgeButton">
+								<div class="badgeColour">
+									<h1>Badges</h1>
+								</div>
+							</div>
+
+							<img class="spaceman-badge" src="images/menu/spaceman.svg" alt="spaceman">
+							
+						</div>
+
+
+					<!-- <div class="menu1-button button">
+						Go to page one
+					</div>
+					<div class="menu2-button button">
+						Go to page two
+					</div> -->
+					</div>
+				</div> <!-- menu page -->
+
+				<!-- ========================= OTHER PAGES =========================== -->
+				
+				<div class="gameStart">
+					
+					<div class="launchBG">
+
+						<img class="stars" src="images/mountain/stars.svg" alt="stars">
+
+						<img class="whiteSun" src="images/mountain/whiteSun.svg" alt="sun">
+
+						<img class=" mtn4" src="images/mountain/mtn4.svg" alt="Mountains">
+
+						<img class=" mtn3" src="images/mountain/mtn3.svg" alt="Mountains">
+
+						<img class=" mtn2" src="images/mountain/mtn2.svg" alt="Mountains">
+
+						<img class=" mtn1" src="images/mountain/mtn1.svg" alt="Mountains">
+
+						<div class="fl"></div>
+
+						<img class="lp" src="images/mountain/launchPad.svg" alt="launchPad">
+					</div>
+
+					<img class="lr" src="images/mountain/launchRocket.svg" alt="launchPad">
+					
+					<!--<div class="p-menu-button button">
+						Go back to menu
+					</div>-->
+
+				<div class="sideboxclose">
+					<div class="infobox">
+			
+
+						<div class="sideboxinfo"id="information">
+							<span class="rocketText">Welcome to Rocket Force</span><br> 
+							<span id="name"></span>Here you will learn some of the physics needed to get into space! Your first task is to show balanced forces.
+						</div>
+
+						<img class="next" id="next-btn" src="images/ui/smallNext.svg" alt="Mountains">
+
+						<img class="back displayNone" id="back-btn" src="images/ui/smallBack.svg" alt="Mountains">
+
+						<img class="pop-up opacity" src="images/pop-up.svg" alt="pop-up">			
+					
+					</div>
+					
+					<div class="infoboxarrow">
+						<div class="dots"></div>
+						<div class="dots d2"></div>
+						<div class="dots d3"></div>
+						<div class="dots toplower"></div>
+						<div class="dots toplower d2"></div>
+						<div class="dots toplower d3"></div>
+						<div class="dots bottom"></div>
+						<div class="dots bottom d2"></div>
+						<div class="dots bottom d3"></div>
+						<div class="dots bottomlower"></div>
+						<div class="dots bottomlower d2"></div>
+						<div class="dots bottomlower d3"></div>
+						<div class="arrow-right"></div>
+					</div>
+				</div>
+
+<!--<p>Remember, every action has an equal and opposite reaction!</p>-->
+
+
+				
+				<img class="hotspot opacity" id="hotspot1" src="images/ui/arrowmarker.svg" alt="arrow drop area">
+					
+				<img class="hotspot opacity" id="hotspot2" src="images/ui/arrowmarker.svg" alt="arrow drop area">
+
+						
+				<div class="arrowdrag dragger1 unballencedone opacity">
+					<img src="images/ui/arrow1.svg" alt="Mountains">
+				</div>
+
+				<div class="arrowdrag dragger2 unballencedtwo r180 opacity">
+					<img src="images/ui/arrow1.svg" alt="Mountains">
+				</div>
+					
+				<div class="success-message-DandD1 opacity displayNone">
+					<h1>Well Done! <br>You have earned</h1>
+					<p>Remember if nothing is moving then the forces must balance! </p>
+					
+					<img src="images/balencedBadge.svg" class="balencedBadge" alt="badge">
+
+					<div class="starsBadge">
+						<img src="images/star-PlaceHolder.svg" class="star-PlaceHolder" alt="star">
+						<img src="images/star-PlaceHolder.svg" class="star-PlaceHolder star-PlaceHolderPos2" alt="star">
+						<img src="images/star-PlaceHolder.svg" class="star-PlaceHolder star-PlaceHolderPos3" alt="star">
+
+						<img src="images/porgressStar.svg" alt="gold star" class="goldstar-PlaceHolder star-PlaceHolder opacity" id="goldStar1">
+						<img src="images/porgressStar.svg" alt="gold star" class="goldstar-PlaceHolder star-PlaceHolderPos2 opacity" id="goldStar2">
+						<img src="images/porgressStar.svg" alt="gold star" class="goldstar-PlaceHolder star-PlaceHolderPos3 opacity" id="goldStar3">
+					</div>
+
+					<img src="images/ui/largeNext.svg" alt="next" class="nextgame1 opacity " id="balancedNext">
+
+				</div>
+
+
+
+
+				</div>
+
+				<div class="page-yourPageID2">
+
+					<img class="star" src="images/launch-page/star.png">
+
+
+					<div class="earth opacity">
+						<img class="shine2 atmosphere" src="images/launch-page/shine3.png">
+
+						<img class="shine1 atmosphere" src="images/launch-page/shine2.png">
+
+						<img class="shine atmosphere"src="images/launch-page/shine.png">
+
+						<img class="earthMain" src="images/launch-page/earth.png">
+					</div>
+
+					<div class="sideboxclose">
+						<div class="infobox">
+							<div class="sideboxinfo"id="information">
+								<p class="" id="massP1">Now you know how to<br> show balanced forces using arrows, we want to know how much power it is going to take to take off! We must convert the mass of the rocket into Newtons (N)</p>
+
+								<p class="displayNone" id="massP2"> For Example if we have a box that weighs 1Kg,<br>
+								it would weigh 9.8N on earth. This is because of the gravity that acts on it. 
+								(1kg x 9.8N)	
+								</p>
+								
+								<div class="mass-question1 displayNone"  id="massP3">
+									<p>How many N would a box with a mass of 10Kg weigh?</p>
+
+									<div class="ansbox" id="ans1">
+										<p>100N</p>
+									</div>
+									<div class="ansbox" id="ans2">
+										<p>98N</p>
+										<p class="correct-mass opacity">
+											Correct!<br>
+										 	Now something a little harder</p>
+									</div>
+									<div class="ansbox" id="ans3">
+										<p>9.80N</p>
+									</div>
+								</div>
+								
+								<p class="displayNone" id="massP4">	Correct!<br>
+								 Now something a little harder
+								</p>
+
+								
+
+							</div>
+											
+							<!-- <img class="next" id="next-btn" src="images/ui/smallNext.svg" alt="Mountains"> -->
+
+						<!-- 	<img class="back displayNone" id="back-btn" src="images/ui/smallBack.svg" alt="Mountains"> -->
+
+							<img class="pop-up opacity" src="images/pop-up.svg" alt="pop-up">
+
+							<div class=" opacity" id="force-information"></div>
+							<div class="forceslider opacity displayNone">
+								<div id="slider">
+  									<div id="custom-handle" class="ui-slider-handle"></div>
+								</div>	
+							</div>
+
+							<img src="images/ui/smallNext.svg" alt="next" class="nextSlider opacity" id="nextSlider">
+									
+						
+						</div>
+						
+						<div class="infoboxarrow">
+							<div class="dots"></div>
+							<div class="dots d2"></div>
+							<div class="dots d3"></div>
+							<div class="dots toplower"></div>
+							<div class="dots toplower d2"></div>
+							<div class="dots toplower d3"></div>
+							<div class="dots bottom"></div>
+							<div class="dots bottom d2"></div>
+							<div class="dots bottom d3"></div>
+							<div class="dots bottomlower"></div>
+							<div class="dots bottomlower d2"></div>
+							<div class="dots bottomlower d3"></div>
+							<div class="arrow-right"></div>
+						</div>
+					</div>
+
+
+					<img class="mass-box opacity" id="massBox" src="images/mass-game/box.svg">
+
+					<img class="mass-scale opacity" id="massScale" src="images/mass-game/scale.svg">
+
+					<div class="weights">
+						<h2 class="opacity" id="oneKg">1kg</h2>
+						<h2 class="opacity" id="tenKg">10kg</h2>
+						
+					</div>
+
+					<img src="images/ui/arrow1.svg" class="mass-arrow-down r180 opacity" id="massArrowDown" alt="Mountains">
+					
+
+					<h2 class="earthN opacity" id="ninepoint">9.8N</h2>
+					<h2 class="earthN opacity" id="nine8">98N</h2>
+
+					<div class="pusher opacity">
+						<img src="images/pusher/body.svg" class="pusherbody" alt="pusher body">
+						<img src="images/pusher/piston.svg" class="piston" alt="piston">
+						<img src="images/pusher/floor.svg" class="floor-push" alt="floor">
+						
+						
+							
+							<div class="resultent forceN" id="resultent"></div>
+							<div class="nOfForce forceN" id="nOfForce"></div> 
+							<div class="pushBack forceN" id="pushBack"></div> 
+
+						<div class="amount" id="amount"></div>
+
+						<div class="arrow-pusher">
+							<div class="ab"></div>
+							<div class="ah"></div>
+						</div>
+
+						<div class="pushbackarrow r180">
+							<div class="ab"></div>
+							<div class="ah"></div>
+						</div>
+					</div>
+					
+				</div>
+
+
+				<div class="page-yourPageID3">
+					<div class="launchBG">
+
+						<img class="stars" src="images/mountain/stars.svg" alt="stars">
+
+						<img class="whiteSun" src="images/mountain/whiteSun.svg" alt="sun">
+
+						<img class=" mtn4" src="images/mountain/mtn4.svg" alt="Mountains">
+
+						<img class=" mtn3" src="images/mountain/mtn3.svg" alt="Mountains">
+
+						<img class=" mtn2" src="images/mountain/mtn2.svg" alt="Mountains">
+
+						<img class=" mtn1" src="images/mountain/mtn1.svg" alt="Mountains">
+
+						<div class="fl"></div>
+
+						<img class="lp" src="images/mountain/launchPad.svg" alt="launchPad">
+					</div>
+
+					<img class="lr" src="images/mountain/launchRocket.svg" alt="launchPad">
+
+					<div class="sideboxclose">
+					<div class="infobox">
+			
+
+						<div class="sideboxinfo"id="rocketmass">
+
+						</div>
+
+						<div class="N-input opacity">
+							<input id="numb">
+							
+							<img src="images/ui/ok.svg" class="ok-btn-inputcheck" id="inputCheck" alt="ok">
+
+							<img src="images/ui/ok.svg" class="ok-btn-inputcheck displayNone" id="inputCheck2" alt="ok">
+							<!-- <button type="button" onclick="resultantForceOne()">Submit</button> -->
+
+													</div>
+
+
+						<img class="next" id="next-btn2" src="images/ui/smallNext.svg" alt="Mountains">
+
+
+						<img class="pop-up opacity" src="images/pop-up.svg" alt="pop-up">	
+
+						<h2 class="correctTextGame2 opacity">Correct!</h2>		
+					
+					</div>
+					
+					<div class="infoboxarrow">
+						<div class="dots"></div>
+						<div class="dots d2"></div>
+						<div class="dots d3"></div>
+						<div class="dots toplower"></div>
+						<div class="dots toplower d2"></div>
+						<div class="dots toplower d3"></div>
+						<div class="dots bottom"></div>
+						<div class="dots bottom d2"></div>
+						<div class="dots bottom d3"></div>
+						<div class="dots bottomlower"></div>
+						<div class="dots bottomlower d2"></div>
+						<div class="dots bottomlower d3"></div>
+						<div class="arrow-right"></div>
+					</div>
+				</div>
+
+					<div class="success-message-DandD1 displayNone">
+					<h1>Well Done! <br>You have earned</h1>
+					
+					
+					<img src="images/nbadge.svg" class="balencedBadge" alt="badge">
+
+					<div class="starsBadge">
+						<img src="images/star-PlaceHolder.svg" class="star-PlaceHolder" alt="star">
+						<img src="images/star-PlaceHolder.svg" class="star-PlaceHolder star-PlaceHolderPos2" alt="star">
+						<img src="images/star-PlaceHolder.svg" class="star-PlaceHolder star-PlaceHolderPos3" alt="star">
+
+						<img src="images/porgressStar.svg" alt="gold star" class="goldstar-PlaceHolder star-PlaceHolder opacity" id="goldStarG2-1">
+						<img src="images/porgressStar.svg" alt="gold star" class="goldstar-PlaceHolder star-PlaceHolderPos2 opacity" id="goldStarG2-2">
+						<img src="images/porgressStar.svg" alt="gold star" class="goldstar-PlaceHolder star-PlaceHolderPos3 opacity" id="goldStarG2-3">
+					</div>
+
+					<img src="images/ui/largeNext.svg" alt="next" class="nextgame1 opacity " id="balancedNext">
+
+				</div>
+				</div>
+				
+			<div class="page-yourPageID4">
+				<div class="badgesgrid">
+					<div class="1">
+						<img src="images/badges/balencedBadge.svg" alt="badge" class="badgesize">
+						<img src="images/badges/lockedBadge.svg" alt="badge" class="badgesize" id="lockone">
+
+						<div class="starsBadge2">
+							<img src="images/star-PlaceHolder.svg" class="star-PlaceHolderbadge" alt="star">
+							<img src="images/star-PlaceHolder.svg" class="star-PlaceHolderbadge star-PlaceHolderPos2badge" alt="star">
+							<img src="images/star-PlaceHolder.svg" class="star-PlaceHolderbadge star-PlaceHolderPos3badge" alt="star">
+
+							<img src="images/porgressStar.svg" alt="gold star" class="goldstar-PlaceHolder star-PlaceHolderPosbadge opacity" id="goldStarB1-1">
+							<img src="images/porgressStar.svg" alt="gold star" class="goldstar-PlaceHolder star-PlaceHolderPos2badge opacity" id="goldStarB1-2">
+							<img src="images/porgressStar.svg" alt="gold star" class="goldstar-PlaceHolder star-PlaceHolderPos3badge opacity" id="goldStarB1-3">
+						</div>
+
+					</div>
+					<div class="2">
+						<img src="images/badges/newtonsBadge.svg" alt="badge" class="badgesize">
+
+						<img src="images/badges/lockedBadge.svg" alt="badge" class="badgesize" id="locktwo">
+
+
+						<div class="starsBadge2">
+							<img src="images/star-PlaceHolder.svg" class="star-PlaceHolderbadge" alt="star">
+							<img src="images/star-PlaceHolder.svg" class="star-PlaceHolderbadge star-PlaceHolderPos2badge" alt="star">
+							<img src="images/star-PlaceHolder.svg" class="star-PlaceHolderbadge star-PlaceHolderPos3badge" alt="star">
+
+							<img src="images/porgressStar.svg" alt="gold star" class="goldstar-PlaceHolder star-PlaceHolderPosbadge opacity" id="goldStarB2-1">
+							<img src="images/porgressStar.svg" alt="gold star" class="goldstar-PlaceHolder star-PlaceHolderPos2badge opacity" id="goldStarB2-2">
+							<img src="images/porgressStar.svg" alt="gold star" class="goldstar-PlaceHolder star-PlaceHolderPos3badge opacity" id="goldStarB2-3">
+						</div>
+					</div>
+					<div class="3">
+						<img src="images/badges/othertwo.svg" alt="badge" class="badgesize">
+						<img src="images/badges/lockedBadge.svg" alt="badge" class="badgesize">
+					</div>
+					<div class="4">
+						<img src="images/badges/otherone.svg" alt="badge" class="badgesize">
+						<img src="images/badges/lockedBadge.svg" alt="badge" class="badgesize">
+					</div>
+				</div>
+			</div>
+
+
+			</div> <!-- end of pages -->
+
+			<!-- add any containers here that you don't want to animate when pages transition -->
+			<div class="persistent-stuff">
+				<div class="menuicon opacity" id="menuIcon">
+					<div class="menuline  menulineone" id="menuLineone"></div>
+					<div class="menuline menulinetwo" id="menuLinetwo"></div>
+					<div class="menuline menulinethree" id="menuLinethree"></div>
+				</div>
+
+				<img src="images/menuIcon/home.svg" alt="home" class="homeicon">
+
+				<img src="images/menuIcon/calc.svg" alt="calc" class="calcicon">
+
+				<div class="soundMenu">
+					<img class="sfxOff soundicon " src="images/sound/sfxOff.svg" alt="sfx icon" id="sfxOff">
+
+					<img class="sfxOff soundicon " src="images/sound/sfxloud.svg" alt="sfx icon" id="sfxon">
+
+					<img class="audioLoud soundicon" src="images/sound/audioLoud.svg" alt="sound icon">
+
+				</div>
+			</div>
+		</div> <!-- end of main container -->
+
+
+		<script>
+			function check() {
+			document.getElementById("name") .innerHTML = document.enterName.name.value;
+				}
+
+
+		</script>
+	</body>
+</html>
